@@ -3,7 +3,7 @@ name: Pregunta2
 on: 
   push: 
     branches:
-      - main10
+      - main
  
 jobs:
   setup:
