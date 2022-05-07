@@ -1,0 +1,13 @@
+name: Creacion de Runners
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  setup:
+    runs-on: self-hosted
+    
+    steps:
+    - name: Informacion Nodo
+      run: ip add
