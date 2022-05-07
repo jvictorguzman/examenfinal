@@ -1,0 +1,20 @@
+name: Pregunta Cuatro Despliegue de Aplicacion
+
+on: 
+  push: 
+    branches:
+      - main
+jobs:
+
+  crear-acceder-contenedor:
+  
+    runs-on: ubuntu-latest
+    
+    services:
+      portal:
+        image: httpd:latest
+        ports:
+          - 8080:80          
+    steps:    
+      - name: Acceder al portal
+        run: curl http://localhost:8080
