@@ -1,11 +1,11 @@
-name: Pregunta1
+name: PreguntaUno
 
 on: 
   push: 
     branches:
       - main
 jobs:
-  Pregunta1:
+  PreguntaUno:
     runs-on: ubuntu-latest
     steps:
     
@@ -25,7 +25,7 @@ jobs:
           cd ..
       
       - name: step 3 - Creacion del artefacto ZIP
-      - uses: papeloto/action-zip@v1
+        uses: papeloto/action-zip@v1
         with:
           files: examen/
           dest: examen.zip
