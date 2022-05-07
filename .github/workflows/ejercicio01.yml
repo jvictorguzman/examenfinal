@@ -3,7 +3,7 @@ name: PreguntaUno
 on: 
   push: 
     branches:
-      - main
+      - main1
 jobs:
   PreguntaUno:
     runs-on: ubuntu-latest
