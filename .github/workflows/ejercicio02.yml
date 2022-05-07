@@ -27,5 +27,5 @@ jobs:
     steps:      
       - name: Check out del repositorio
         uses: actions/checkout@v2
-      - name: Ejecucion de las pruebas
+      - name: Ejecucion de las prueba
         run: sh ./test_server.sh
