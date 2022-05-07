@@ -1,4 +1,4 @@
-name: Pregunta2
+name: PreguntaDos
 
 on: 
   push: 
@@ -20,7 +20,7 @@ jobs:
       - name: Check out del repositorio
         uses: actions/checkout@v2
       - name: Ejecucion de la compilacion
-        run: sh ./setup_server.sh     
+        run: sh ./build_server.sh     
   test:
     needs: build
     runs-on: ubuntu-latest
