@@ -1,0 +1,54 @@
+name: Pregunta1
+
+on: 
+  push: 
+    branches:
+      - main
+jobs:
+  Pregunta1:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: step 1 - Crear directorio examen
+        run: |
+             mkdir examen
+             mkdir artefacto
+        
+      - name: step 2 - Adicionar archivos al directorio examen
+        run: |
+          cd examen
+          echo 'Mensaje examen 1'    > examen01.html
+          echo 'Mensaje examen 2'    > examen02.html
+          echo 'Mensaje examen 3'    > examen03.html
+          echo 'Mensaje examen 4'    > examen04.html
+          echo 'Mensaje examen 5'    > examen05.html          
+          cd ..
+      
+      - name: step 3 - Creacion del artefacto ZIP
+      - uses: papeloto/action-zip@v1
+        with:
+          files: examen/
+          dest: examen.zip
+                                    
+      - name: step 4 - Verificacion de la creacion de artefactos ZIP
+        run: ls -la
+        
+      - name: step 5 - Upload Artefacto
+        uses: actions/upload-artifact@v3
+        with:
+          name: Artefacto_EXAMEN
+          path: examen.zip
+          
+      - name: step 6 - Download Artefacto
+        uses: actions/download-artifact@v3
+        with:
+          name: Artefacto_EXAMEN
+          path: ~/artefacto
+          
+      - name: step 7 - Verificacion de la descarga del artefactos
+        run: ls -la ~/artefacto
+      
+        
+      
+        
+        
