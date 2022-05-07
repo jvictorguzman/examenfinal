@@ -1,0 +1,31 @@
+name: Pregunta2
+
+on: 
+  push: 
+    branches:
+      - main10
+ 
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:    
+      - name: Check out del repositorio
+        uses: actions/checkout@v2
+      - name: Ejecucion de la configuracion
+        run: sh ./setup_server.sh      
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Check out del repositorio
+        uses: actions/checkout@v2
+      - name: Ejecucion de la compilacion
+        run: sh ./setup_server.sh     
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:      
+      - name: Check out del repositorio
+        uses: actions/checkout@v2
+      - name: Ejecucion de las pruebas
+        run: sh ./test_server.sh
