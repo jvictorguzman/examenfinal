@@ -11,7 +11,7 @@ jobs:
       - name: Check out del repositorio
         uses: actions/checkout@v2
       - name: Ejecucion de la configuracion
-        run: sh ./setup_server.sh      
+        run: sh ./setup_server.sh    
   build:
     needs: setup
     runs-on: ubuntu-latest
