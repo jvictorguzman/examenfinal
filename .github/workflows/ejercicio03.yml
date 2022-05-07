@@ -28,7 +28,7 @@ jobs:
       - name: Check out del repositorio
         uses: actions/checkout@v2
       - name: Ejecucion de la prueba 01
-        run: sh ./prueba01.sh 
+        run: sh ./prueba_01.sh 
   prueba02:
     needs: prueba01
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
       - name: Check out del repositorio
         uses: actions/checkout@v2
       - name: Ejecucion de la compilacion
-        run: sh ./prueba02.sh 
+        run: sh ./prueba_02.sh 
   despliegue:
     needs: prueba02
     runs-on: ubuntu-latest
