@@ -3,7 +3,7 @@ name: PreguntaTres
 on: 
   push: 
     branches:
-      - main
+      - main3
  
 jobs:
   setup:
